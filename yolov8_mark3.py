@@ -10,7 +10,7 @@ from ultralytics import YOLO
 # ------------ CONFIG ------------
 CONFIG_FILE = 'config.json'
 SENDER_EMAIL = "rajatsinghgill31@gmail.com"
-APP_PASSWORD = "fowp fkch etqf part"  # Replace this with your actual app password
+APP_PASSWORD = ""  # Replace this with your actual app password
 ALERT_EMAIL = "rajatsinghgill31@gmail.com"
 
 # ------------ EMAIL ALERTING ------------
