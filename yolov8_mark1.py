@@ -1,13 +1,20 @@
 import cv2
 from ultralytics import YOLO
+import pyautogui
+
 
 # Load the YOLOv8 model
 model = YOLO('yolov8n.pt')
 
 # Setup video capture
 cap = cv2.VideoCapture(0)
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
+screen_width, screen_height = pyautogui.size()
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, screen_width - 250)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, screen_height - 250)
+
+
+cv2.namedWindow("YOLOv8 Human Detection in ROI", cv2.WINDOW_NORMAL)
+cv2.setWindowProperty("YOLOv8 Human Detection in ROI", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
 
 # Globals
 roi = None
